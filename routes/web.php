@@ -18,4 +18,6 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/events', 'EventsController@index');
+Route::get('/menu', 'MenuController@index');
+
         
