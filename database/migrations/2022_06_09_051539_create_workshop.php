@@ -14,7 +14,12 @@ class CreateWorkshop extends Migration
     public function up()
     {
         Schema::table('workshop', function (Blueprint $table) {
-            //
+            $table->string('name');
+            $table->timestamps('start')->nullable();
+            $table->timestamps('end')->nullable();
+            $table->string('event_id');
+            $table->string('workshop');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +30,6 @@ class CreateWorkshop extends Migration
      */
     public function down()
     {
-        Schema::table('workshop', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('workshop');
     }
 }
