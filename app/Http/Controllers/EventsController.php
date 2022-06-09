@@ -13,6 +13,7 @@ class EventsController extends Controller
         $workers = DB::select('select * from workers')
         ->leftJoin ("workshop", "event_id", "=", "workers.id")
         ->get();
-        dd($workers);
+        // dd($workers);
+        return view('workers_view',['$workers' => '$workers']);
     }
 }
